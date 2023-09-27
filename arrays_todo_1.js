@@ -14,6 +14,7 @@ function pushFront(arr, value_to_insert){
       arr[i+1] = arr[i];
     }
     arr[0] = value_to_insert;
+    return arr;
   }
   
 let test_array = [5,7,2,3];
@@ -56,7 +57,8 @@ function popFront(arr){
   for (var i=0; i < arr.length-1; i++ ){
     arr[i] = arr[i+1];
   }
-  arr.pop();
+  
+  arr.length = arr.length - 1;
   console.log("Updated array ->", arr);
   return value_to_return;
 }
@@ -88,6 +90,7 @@ function insertAt(arr, index_to_insert, value_to_insert){
     arr[i+1] = arr[i];
   }
   arr[index_to_insert] = value_to_insert;
+  return arr;
 }  
 test_array = [100,200,5];
 console.log("Original array ->", test_array);
@@ -173,7 +176,7 @@ console.log("\n*****Swap Pairs*****\n");
 
 function swapPairs(arr){
   if (arr.length === 0)
-    return;
+    return arr;
 
   for (var i = 0; i < arr.length - 1; i+=2){
     if (arr.length % 2 !== 0 && i === arr.length-1){
@@ -183,7 +186,7 @@ function swapPairs(arr){
     arr[i] = arr[i+1];
     arr[i+1] = temp;
   }
-  return;
+  return arr;
 }
 
 test_array = [];
@@ -215,7 +218,7 @@ console.log("\n*****Remove Duplicates*****\n");
 
 function removeDuplicates(arr){
   if (arr.length < 2){
-    return;
+    return arr;
   }
 
   for (i = arr.length; i >= 0; i--){
@@ -224,6 +227,7 @@ function removeDuplicates(arr){
       removeAt(arr,i);
     }
   }
+  return arr;
 }
 
 test_array = [-2,-2,3.14,5,5,10];
