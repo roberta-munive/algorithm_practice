@@ -135,7 +135,8 @@ function removeAt(arr, index_to_remove){
   for(var i = index_to_remove; i < arr.length; i++){
     arr[i] = arr[i+1];
   }
-  arr.pop();
+  // arr.pop();
+  arr.length = arr.length - 1;
 
   return value_to_return;
 }
