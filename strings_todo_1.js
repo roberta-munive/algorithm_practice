@@ -19,6 +19,13 @@ function removeBlanks (str){
         }
     }
 
+    //alternative solution:
+    // for(let char in str){
+    //     if(str[char] != " "){
+    //         string_without_blanks += str[char]
+    //     }
+    // }
+
     return string_without_blanks;
 
     // str_array = str.split(" ");
@@ -72,12 +79,11 @@ function getDigits(str){
     }
 
     let digit_str = "";
-    let str_array = str.split("");
-    for (var i = 0; i < str_array.length; i++){
+    for (var i = 0; i < str.length; i++){
         
 
-        if (!isNaN(str_array[i])){
-            digit_str += str_array[i];
+        if (!isNaN(str[i])){
+            digit_str += str[i];
         }
     }
     let integer_result = Number(digit_str);
@@ -178,11 +184,20 @@ function countNonSpaces(str){
 
     let string_without_spaces = "";
 
-    for (i = 0; i < str.length; i++){
+    for (var i = 0; i < str.length; i++){
         if(str[i] != " "){
             string_without_spaces += str[i];
         }
     }
+
+    //alternative solution:
+    // let char_counter = 0;
+    // for (char in str){
+    //     if (str[char] != " "){
+    //         char_counter += 1;
+    //     }
+    // }
+    // return char_counter;
 
     return string_without_spaces.length;
 }
@@ -234,6 +249,15 @@ function removeShorterStrings (arr_of_strings, threshold_number){
             strings_to_keep_array[num_of_strings_kept - 1] = arr_of_strings[i];
         }
     }
+
+    //alternative solution:
+    // let nextIndex = 0;
+    // for(var index in arr_of_strings){
+    //     if(arr_of_strings[index].length >= threshold_number){
+    //         strings_to_keep_array[nextIndex] = arr_of_strings[index];
+    //         nextIndex += 1;
+    //     }
+    // }
 
     console.log("num of strings removed -> ", arr_of_strings.length - num_of_strings_kept);
     strings_to_keep_array.length = num_of_strings_kept;
